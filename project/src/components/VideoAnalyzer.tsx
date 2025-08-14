@@ -37,9 +37,14 @@ const captureFrame = async () => {
     setCapturedImage(imageData);
 
     // Send to backend for analysis
-    const response = await axios.post("http://localhost:5000/analyze-image", {
+    // const response = await axios.post("http://localhost:5000/analyze-image", {
+    //   image: imageData
+    // });
+
+    const response = await axios.post("https://ai-image-analyzer-1-i8su.onrender.com/analyze-image", {
       image: imageData
     });
+
 
     const result = response.data;
     setAnalysisResult(result);
