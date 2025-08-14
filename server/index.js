@@ -3,9 +3,12 @@ import cors from "cors";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const app = express();
-app.use(cors());
 app.use(express.json({ limit: "15mb" })); // to handle large image uploads
-
+app.use(cors({
+  origin: "https://ai-image-analyzer-psi.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 // Replace with your actual Gemini API Key
 const apiKey = process.env.apiKey;
 
