@@ -57,6 +57,21 @@ const captureFrame = async () => {
   }
 };
 
+  const detectPlatform = () => {
+    const ua = navigator.userAgent.toLowerCase();
+
+    if (ua.includes("instagram")) return "Instagram App";
+    if (ua.includes("fbav") || ua.includes("facebook")) return "Facebook App";
+    if (ua.includes("linkedin")) return "LinkedIn App";
+
+    return "Normal Browser";
+  };
+
+  const handleClick = () => {
+    const platform = detectPlatform();
+    alert("This is " + platform);
+  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-4">
@@ -68,7 +83,9 @@ const captureFrame = async () => {
               <Eye className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-4xl font-bold text-gray-900">
-              AI Image Analyzer
+              <button onClick={handleClick}>
+              AI Image Analyzerr
+              </button>
             </h1>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
