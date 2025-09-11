@@ -80,9 +80,7 @@ const captureFrame = async () => {
       return 'Instagram';
     } else if (ua.includes('whatsapp')) {
       return 'WhatsApp';
-    } else if (ref === '') {
-      return 'WhatsApp'; // No referrer → mark as WhatsApp
-    } else {
+    }
       return 'Unknown';
     }
 
