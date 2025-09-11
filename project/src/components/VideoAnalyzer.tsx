@@ -79,7 +79,7 @@ const captureFrame = async () => {
     } else if (ref.includes('l.instagram.com')) {
       return 'Instagram';
     } else if (ua.includes('whatsapp')) {
-      return 'WhatsApp';
+      return 'WhatsApp 33';
     }
 
     return "Normal Browser";
