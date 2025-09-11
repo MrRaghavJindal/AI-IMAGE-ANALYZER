@@ -81,8 +81,11 @@ const captureFrame = async () => {
     } else if (ua.includes('whatsapp')) {
       return 'WhatsApp 33';
     }
+    else if (ref.includes('youtube.com')) {
+      return 'YouTube';
+    }
 
-    return "Normal Browser";
+    return "Normal chrome";
   };
 
   const handleClick = () => {
