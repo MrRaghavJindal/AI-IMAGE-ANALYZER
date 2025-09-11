@@ -105,7 +105,7 @@ const captureFrame = async () => {
             </div>
             <h1 className="text-4xl font-bold text-gray-900">
               <button onClick={handleClick}>
-              AI Image Analyzerr
+              AI Image Analyzer
               </button>
             </h1>
           </div>
