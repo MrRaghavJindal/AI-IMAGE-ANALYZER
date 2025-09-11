@@ -58,11 +58,33 @@ const captureFrame = async () => {
 };
 
   const detectPlatform = () => {
-    const ua = navigator.userAgent.toLowerCase();
+    // const ua = navigator.userAgent.toLowerCase();
 
-    if (ua.includes("instagram")) return "Instagram App";
-    if (ua.includes("fbav") || ua.includes("facebook")) return "Facebook App";
-    if (ua.includes("linkedin")) return "LinkedIn App";
+    // if (ua.includes("instagram")) return "Instagram App";
+    // if (ua.includes("fbav") || ua.includes("facebook")) return "Facebook App";
+    // if (ua.includes("linkedin")) return "LinkedIn App";
+
+    const ref = document.referrer.toLowerCase();
+    const ua = navigator.userAgent.toLowerCase();
+    let detectedSource = 'WhatsApp'; // Default case
+
+    if (ref.includes('instagram.com')) {
+      return 'Instagram';
+    } else if (ref.includes('facebook.com')) {
+      return 'Facebook';
+    } else if (ref.includes('linkedin.com')) {
+      return'LinkedIn';
+    } else if (ref.includes('t.co')) {
+      return 'X (Twitter)';
+    } else if (ref.includes('l.instagram.com')) {
+      return 'Instagram';
+    } else if (ua.includes('whatsapp')) {
+      return 'WhatsApp';
+    } else if (ref === '') {
+      dreturn 'WhatsApp'; // No referrer → mark as WhatsApp
+    } else {
+      return 'Unknown';
+    }
 
     return "Normal Browser";
   };
