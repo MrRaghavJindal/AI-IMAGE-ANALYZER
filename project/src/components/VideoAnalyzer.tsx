@@ -81,8 +81,6 @@ const captureFrame = async () => {
     } else if (ua.includes('whatsapp')) {
       return 'WhatsApp';
     }
-      return 'Unknown';
-    }
 
     return "Normal Browser";
   };
